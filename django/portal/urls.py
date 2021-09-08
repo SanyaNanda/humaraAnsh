@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import PatientSignUpView, SignUpView, DoctorSignUpView, PatientHomeView, DoctorHomeView, login_success
+from .views import PatientSignUpView, SignUpView, DoctorSignUpView, PatientHomeView, DoctorHomeView, login_success, login_request
 
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('doctor_home/', DoctorHomeView.as_view(), name='doctor_home'),
     path('patient_home/', PatientHomeView.as_view(), name='patient_home'),
     path('login_success/', login_success, name='login_success'),
+    path('login/', login_request, name="login"),
 ]
