@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from portal.views import SignUpView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('portal/', include('portal.urls'))
+    path('portal/', include('portal.urls')),
+    path('', SignUpView.as_view(), name='signup'),
 ]
