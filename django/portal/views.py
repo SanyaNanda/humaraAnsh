@@ -1,4 +1,4 @@
-from portal.models import User
+from portal.models import User, Patient,  Doctor
 from django.shortcuts import render, redirect, get_object_or_404
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponse, HttpResponseRedirect
@@ -70,10 +70,12 @@ class DoctorSignUpView(CreateView):
         login(self.request, user)
         return redirect('doctor_home')
 
-class PatientHomeView(TemplateView):
+class PatientHomeView(ListView):
+    model = Patient
     template_name = 'portal/patient_home.html'
 
-class DoctorHomeView(TemplateView):
+class DoctorHomeView(ListView):
+    model = Doctor
     template_name = 'portal/doctor_home.html'
 
 @login_required

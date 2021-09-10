@@ -1,9 +1,24 @@
 {% extends 'base.html' %}
 
 {% block content %}
+{% if user.is_authenticated %}
   <h1>Doctor Home</h1>
+  {% if user.is_doctor %}
+  {% for doctor in object_list %}
+  {% if user.id == doctor.user.id %}
+
+  <p>Welcome Dr. {{ user.first_name}} {{ user.last_name}}</p>
+  <p>Specialist in {{ doctor.specialist }}</p>
+  <p>works at hospital {{ doctor.hospital }}</p>
+  <p>with {{doctor.experience_years}} years of experience</p>
+
+  <h3>Features</h3>
   <p>upload pdf</p>
   <p>prescribe medicine</p>
   <p>schedule appointment</p>
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+{% endif%}
 {% endblock %}

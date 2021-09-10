@@ -2,10 +2,24 @@
 
 {% block content %}
   <h1>Patient Home</h1>
+  {% if user.is_authenticated %}
+
+  {% if user.is_patient %}
+  {% for patient in object_list %}
+  {% if user.id == patient.user.id %}
+
+  <p>Welcome Parent! {{ user.first_name}} {{ user.last_name}}</p>
+  <p>Pregnancy Month {{ patient.pregnancy_month }}</p>
+
+  <h3>Features</h3>
   <p>view pdf</p>
   <p>buy medicine</p>
   <p>schedule appointment</p>
   <p>view feed</p>
   <p>recommendations</p>
   <p><a href="{% url 'logout' %}">Log Out</a></p>
+  {% endif %}
+  {% endfor %}
+  {% endif %}
+{% endif%}
 {% endblock %}
