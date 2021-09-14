@@ -16,6 +16,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 600;
 }
 
+
 .no-padding {
   padding: 0 !important;
 }
@@ -391,12 +392,13 @@ a:focus, a:hover {
 }
 
 .single-page-header {
-  background-image: url("../images/about/about-header.jpg");
+  background-image: url(../images/slider/holding-hands.jpg);
   background-size: cover;
-  padding: 140px 0 70px;
+  padding: 140px 0 370px;
   text-align: center;
   color: #fff;
   position: relative;
+  background-attachment: fixed;
 }
 
 .single-page-header:before {
