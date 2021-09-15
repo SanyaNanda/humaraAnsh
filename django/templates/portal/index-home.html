@@ -147,10 +147,10 @@ Welcome Slider
  					</p>
  					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
  						<li class="list-inline-item">
- 							<a data-scroll href="#services" class="btn btn-main" href="{% url 'patient_signup' %}">Parent</a>
+ 							<a data-scroll class="btn btn-main" href="{% url 'patient_signup' %}">Parent</a>
  						</li>
  						<li class="list-inline-item">
- 							<a data-scroll href="#team" class="btn btn-transparent" href="{% url 'doctor_signup' %}">Doctor</a>
+ 							<a data-scroll class="btn btn-transparent" href="{% url 'doctor_signup' %}">Doctor</a>
  						</li>
  					</ul>
  				</div>
@@ -179,7 +179,7 @@ Start About Section
       </div>
 
       <div class="col-md-4 text-center">
-        <img src="images/about/member.jpg" class="inline-block" alt="">
+        <img src="{% static '\signup\images\about\member.jpg' %}" class="inline-block" alt="Error">
       </div>
       <div class="col-md-8">
         <div class="row text-center">
@@ -242,7 +242,7 @@ Start About Section
 			<!-- /section title -->
 
 			<div class="col-md-6">
-				<img src="images/about/mom.jpg" class="img-fluid" alt="">
+				<img src="{% static '\signup\images\about\mom.jpg' %}" class="img-fluid" alt="Error">
 			</div>
 			<div class="col-md-6">
 				<ul class="checklist">
@@ -415,7 +415,7 @@ Start Call To Action
 		</div>       <!-- End container -->
 	</section>    <!-- End Section -->
 
-  
+
   <footer id="footer" class="bg-one">
     <div class="top-footer">
       <div class="container">
