@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -17,22 +19,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   
   <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="{% static '/signup/images/favicon.png' %}" />
   
   <!-- CSS
   ================================================== -->
   <!-- Themefisher Icon font -->
-  <link rel="stylesheet" href="plugins/themefisher-font/style.css">
+  <link rel="stylesheet" href="{% static '/signup/plugins/themefisher-font/style.css' %}">
   <!-- bootstrap.min css -->
-  <link rel="stylesheet" href="plugins/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="{% static '/signup/plugins/bootstrap/css/bootstrap.min.css' %}">
   <!-- Lightbox.min css -->
-  <link rel="stylesheet" href="plugins/lightbox2/dist/css/lightbox.min.css">
+  <link rel="stylesheet" href="{% static '/signup/plugins/lightbox2/dist/css/lightbox.min.css' %}">
   <!-- animation css -->
-  <link rel="stylesheet" href="plugins/animate/animate.css">
+  <link rel="stylesheet" href="{% static '/signup/plugins/animate/animate.css' %}">
   <!-- Slick Carousel -->
-  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="{% static '/signup/plugins/slick/slick.css' %}">
   <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">  
+  <link rel="stylesheet" href="{% static '/signup/css/style.css' %}">  
+  <!--Font awesome icons-->
+  <!-- <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+  <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet"> -->
+
 
 </head>
 
@@ -66,9 +72,9 @@ Fixed Navigation
     <!-- main nav -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <!-- logo -->
-      <a class="navbar-brand logo" href="index.html">
-        <img class="logo-default" src="images/logo.png" alt="logo"/>
-        <img class="logo-white" src="images/logo-white.png" alt="logo"/>
+      <a class="navbar-brand logo" href="{% url 'signup' %}">
+        <img class="logo-default" src="{% static '\signup\images\Logo (2).png' %}" alt="logo" style="width: 150px;"/>
+        <img class="logo-white" src="{% static '\signup\images\whitelogo.png' %}" alt="logo" style="width: 150px;"/>
       </a>
       <!-- /logo -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
@@ -78,36 +84,39 @@ Fixed Navigation
 
       <div class="collapse navbar-collapse" id="navigation">
         <ul class="navbar-nav ml-auto text-center">
-          <li class="nav-item dropdown ">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          <li class="nav-item dropdown deactivate">
+            <a class="nav-link" href="{% url 'signup' %}" id="navbarDropdown" role="button" 
               aria-haspopup="true" aria-expanded="false">
-              Homepage
+              Home
             </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <!-- <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="index.html">Homepage</a>
               <a class="dropdown-item" href="onepage-slider.html">Onepage</a>
               <a class="dropdown-item" href="onepage-text.html">Onepage 2</a>
-            </div>
+            </div>  -->
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="about.html">About Us</a>
+            <a class="nav-link" href="#about">About Us</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="service.html">Services</a>
+            <a class="nav-link" href="#service">Services</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="portfolio.html">Portfolio</a>
-          </li>
-          <li class="nav-item  active ">
-            <a class="nav-link" href="team.html">Team</a>
+            <a class="nav-link" href="#testimonial">Testimonial</a>
           </li>
           <li class="nav-item ">
+            <a class="nav-link" href="{% url 'team' %}">Team</a>
+          </li>
+          <!-- <li class="nav-item ">
             <a class="nav-link" href="pricing.html">Pricing</a>
-          </li>
+          </li> -->
           <li class="nav-item ">
-            <a class="nav-link" href="contact.html">Contact</a>
+            <a class="nav-link" href="{% url 'Contact_Us' %}">Contact</a>
           </li>
-          <li class="nav-item dropdown">
+		  <li class="nav-item ">
+            <a class="nav-link" class="btn btn-transparent" href="{% url 'login' %}">Login</a>
+          </li>
+          <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
               Pages
@@ -116,7 +125,7 @@ Fixed Navigation
               <a class="dropdown-item" href="404.html">404 Page</a>
               <a class="dropdown-item" href="blog.html">Blog Page</a>
               <a class="dropdown-item" href="single-post.html">Blog Single Page</a>
-            </div>
+            </div> -->
           </li>
         </ul>
       </div>
@@ -132,10 +141,10 @@ End Fixed Navigation
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<h2>Our Team</h2>
+				<h2 style="padding-top: 270px; font-size:5rem; ">Our Team</h2>
 				<ol class="breadcrumb header-bradcrumb">
-				  <li><a href="index.html">Home</a></li>
-				  <li class="active">Our Team</li>
+				  {% comment %} <li><a href="index.html">Home</a></li>
+				  <li class="active">Our Team</li> {% endcomment %}
 				</ol>
 			</div>
 		</div>
@@ -151,9 +160,10 @@ Start About Section
 		<div class="row">
 		
 			<!-- section title -->
-			<div class="title text-center"  >
+			<div class="title text-center">
 				<h2>About Us</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa placeat voluptas tempore recusandae quasi nesciunt in, facilis animi. Sint, possimus?</p>
+				<p>From pre to post, Humara-Ansh is dedicated to remain a constant.A virtual journal you would want to track and cherish years later! We aims to bridge the gap between doctors
+              and users who want to commence or become a part of the beautiful excursion of parenthood. </p>
 				<div class="border"></div>
 			</div>
 			<!-- /section title -->
@@ -297,39 +307,40 @@ Start About Section
 
 
 
-
 <footer id="footer" class="bg-one">
   <div class="top-footer">
     <div class="container">
       <div class="row">
-        <div class="col-sm-3 col-md-3 col-lg-3">
-          <h3>about</h3>
-          <p>Integer posuere erat a ante venenati dapibus posuere velit aliquet. Fusce dapibus, tellus cursus commodo, tortor mauris sed posuere.</p>
+        <div class="col-sm-4 col-md-4 col-lg-4">
+          <h3>About</h3>
+          <p>From pre to post, Humara Ansh is dedicated to remain a constant. <br>
+            A virtual journal you would want to track and cherish years later!</p>
         </div>
         <!-- End of .col-sm-3 -->
 
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <ul>
             <li><h3>Our Services</h3></li>
-            <li><a href="#">Graphic Design</a></li>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
+            <li><a href="#">Connect with a Doctor</a></li>
+            <li><a href="#">Parental Education</a></li>
+            <li><a href="#">Video Guide</a></li>
+            <li><a href="#">Buy Medicines</a></li>
           </ul>
         </div>
         <!-- End of .col-sm-3 -->
 
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <!-- <div class="col-sm-3 col-md-3 col-lg-3">
           <ul>
             <li><h3>Quick Links</h3></li>
-            <li><a href="#">Partners</a></li>
+            <li><a href="#"></a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">FAQ’s</a></li>
             <li><a href="#">Badges</a></li>
-          </ul>
-        </div>
+          </ul> -->
+        <!-- </div> -->
         <!-- End of .col-sm-3 -->
 
-        <div class="col-sm-3 col-md-3 col-lg-3">
+        <div class="col-sm-4 col-md-4 col-lg-4">
           <ul>
             <li><h3>Connect with us Socially</h3></li>
             <li><a href="#">Facebook</a></li>
@@ -343,9 +354,10 @@ Start About Section
       </div>
     </div> <!-- end container -->
   </div>
+
   <div class="footer-bottom">
-    <h5>Copyright 2016. All rights reserved.</h5>
-    <h6>Design and Developed by <a href="">Themefisher</a></h6>
+    <h5>@ Copyright 2021. All rights reserved.</h5>
+    <h6>Design and Developed by <a href="">TECHNI-HACK</a></h6>
   </div>
 </footer> <!-- end footer -->
 
@@ -359,30 +371,30 @@ Start About Section
     Essential Scripts
     =====================================-->
     <!-- Main jQuery -->
-    <script src="plugins/jquery/jquery.min.js"></script>
+    <script src="{% static '/signup/plugins/jquery/jquery.min.js' %}"></script>
     <!-- Google Map -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script  src="plugins/google-map/gmap.js"></script>
+    <script  src="{% static '/signup/plugins/google-map/gmap.js' %}"></script>
 
     <!-- Form Validation -->
-    <script src="plugins/form-validation/jquery.form.js"></script> 
-    <script src="plugins/form-validation/jquery.validate.min.js"></script>
+    <script src="{% static '/signup/plugins/form-validation/jquery.form.j' %}s"></script> 
+    <script src="{% static '/signup/plugins/form-validation/jquery.validate.min.js' %}"></script>
     
     <!-- Bootstrap4 -->
-    <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{% static '/signup/plugins/bootstrap/js/bootstrap.min.js' %}"></script>
     <!-- Parallax -->
-    <script src="plugins/parallax/jquery.parallax-1.1.3.js"></script>
+    <script src="{% static '/signup/plugins/parallax/jquery.parallax-1.1.3.js' %}"></script>
     <!-- lightbox -->
-    <script src="plugins/lightbox2/dist/js/lightbox.min.js"></script>
+    <script src="{% static '/signup/plugins/lightbox2/dist/js/lightbox.min.js' %}"></script>
     <!-- Owl Carousel -->
-    <script src="plugins/slick/slick.min.js"></script>
+    <script src="{% static '/signup/plugins/slick/slick.min.js' %}"></script>
     <!-- filter -->
-    <script src="plugins/filterizr/jquery.filterizr.min.js"></script>
+    <script src="{% static '/signup/plugins/filterizr/jquery.filterizr.min.js' %}"></script>
     <!-- Smooth Scroll js -->
-    <script src="plugins/smooth-scroll/smooth-scroll.min.js"></script>
+    <script src="{% static '/signup/plugins/smooth-scroll/smooth-scroll.min.js' %}"></script>
     
     <!-- Custom js -->
-    <script src="js/script.js"></script>
+    <script src="{% static '/signup/js/script.js' %}"></script>
 
   </body>
   </html>

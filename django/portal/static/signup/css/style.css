@@ -445,6 +445,9 @@ a:focus, a:hover {
   .navigation .nav-link {
     padding: 10px !important;
   }
+  h2{
+    font-size: 4rem;
+  }
 }
 
 .navigation .dropdown:hover .dropdown-menu {
@@ -489,6 +492,7 @@ a:focus, a:hover {
   -webkit-transform: scaleY(1);
           transform: scaleY(1);
 }
+
 
 @media (max-width: 991px) {
   .navigation .dropdown-menu.show {

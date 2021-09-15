@@ -42,6 +42,12 @@ def login_request(request):
 class SignUpView(TemplateView):
     template_name = 'portal/index-home.html'
 
+class ContactUsView(TemplateView):
+    template_name = 'portal/contact.html'
+
+class TeamView(TemplateView):
+    template_name = 'portal/team.html'
+
 class PatientSignUpView(CreateView):
     model = User
     form_class = PatientSignUpForm
