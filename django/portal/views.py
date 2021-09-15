@@ -40,7 +40,7 @@ def login_request(request):
                     context={"form":form})
 
 class SignUpView(TemplateView):
-    template_name = 'portal/signup.html'
+    template_name = 'portal/index-home.html'
 
 class PatientSignUpView(CreateView):
     model = User
