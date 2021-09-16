@@ -51,7 +51,7 @@ class TeamView(TemplateView):
 class PatientSignUpView(CreateView):
     model = User
     form_class = PatientSignUpForm
-    template_name = 'portal/signup_form.html'
+    template_name = 'portal/index.html'
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'patient'
