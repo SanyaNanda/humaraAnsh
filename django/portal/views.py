@@ -65,7 +65,7 @@ class PatientSignUpView(CreateView):
 class DoctorSignUpView(CreateView):
     model = User
     form_class = DoctorSignUpForm
-    template_name = 'portal/signup_form.html'
+    template_name = 'portal/doc_signup.html'
 
     def get_context_data(self, **kwargs):
         kwargs['user_type'] = 'doctor'

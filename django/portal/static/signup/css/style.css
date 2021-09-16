@@ -392,8 +392,12 @@ a:focus, a:hover {
 }
 
 .single-page-header {
+<<<<<<< HEAD
   /* background-image: url(humaraAnsh\django\portal\static\signup\images\slider\holding-hands.jpg); */
   background-image: url("../images/slider/holding-hands.jpg");
+=======
+  background-image: url(/humaraAnsh/django/portal/static/signup/images/slider/holding-hands.jpg);
+>>>>>>> dcf101e50c7cc41941957dd7f5fb774b6faf4e64
   background-size: cover;
   height: 100vh;
   position: relative;
