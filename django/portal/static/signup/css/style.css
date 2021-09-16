@@ -392,7 +392,7 @@ a:focus, a:hover {
 }
 
 .single-page-header {
-  background-image: url(humaraAnsh\django\portal\static\signup\images\slider\team.jpeg);
+  background-image: url(/humaraAnsh/django/portal/static/signup/images/slider/holding-hands.jpg);
   background-size: cover;
   padding: 140px 0 370px;
   text-align: center;
