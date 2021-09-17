@@ -567,6 +567,7 @@ a:focus, a:hover {
 .hero-area {
   background-image: url("../images/slider/isaac-quesada-dZYI4ga2eUA-unsplash.jpg");
   background-size: cover;
+  background-attachment: fixed;
   height: 100vh;
   position: relative;
   display: flex;
