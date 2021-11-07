@@ -205,6 +205,7 @@ End Fixed Navigation
 			<!-- / End Contact Details -->
 				
 			<!-- Contact Form -->
+
 			<div class="contact-form col-md-6 " >
 				<form id="contact-form" method="post" role="form">
 					<div class="form-group">
@@ -241,6 +242,12 @@ End Fixed Navigation
 		</div> <!-- end row -->
 	</div> <!-- end container -->
 </section> <!-- end section -->
+
+<form action="" method="post">
+  {% csrf_token %}
+  {{ form }}
+  <input type="submit" value="Submit">
+</form>
 
 <!--================================
 =            Google Map            =

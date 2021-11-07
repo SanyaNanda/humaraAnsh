@@ -16,4 +16,14 @@ class Doctor(models.Model):
     specialist = CharField(max_length=255)
     hospital = CharField(max_length=255)
     experience_years = FloatField(null=True)
+
+class Contact(models.Model):
+    name = CharField(max_length=255)
+    email = models.EmailField()
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.email
+
     

@@ -21,5 +21,6 @@ from portal.views import SignUpView
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('portal/', include('portal.urls')),
+    path('map/', include('reports.urls') ),
     path('', SignUpView.as_view(), name='signup'),
 ]

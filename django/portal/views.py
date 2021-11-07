@@ -11,9 +11,11 @@ from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, TemplateView
 from django.contrib.auth.forms import AuthenticationForm
+from django.core.mail import send_mail
+from django.conf import settings
 
 from .models import Patient
-from .forms import PatientSignUpForm, DoctorSignUpForm
+from .forms import ContactForm, PatientSignUpForm, DoctorSignUpForm
 from .decorators import patient_required
 
 def login_request(request):
@@ -90,3 +92,17 @@ def login_success(request):
         return HttpResponseRedirect(reverse('doctor_home'))
     else:
         return HttpResponseRedirect(reverse('patient_home'))
+
+def contact_view(request):
+    if request.method == 'POST':
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            c = form.save()
+            # subject = 'Thankyou for contacting'
+            # message = f'hi {c.name}, thankyou for conacting us. We will come back to you soon.'
+            # email_from = settings.EMAIL_HOST_USER
+            # recipient_list = [c.email,]
+            # send_mail(subject, message, email_from, recipient_list)
+    form = ContactForm()
+    context = {'form': form}
+    return render(request, 'portal/contact.html', context)

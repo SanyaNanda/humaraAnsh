@@ -2,7 +2,8 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.core.exceptions import ValidationError
-from .models import Patient, User, Doctor
+from django.db.models import fields
+from .models import Contact, Patient, User, Doctor
 
 class PatientSignUpForm(UserCreationForm):
     pregnancy_month = forms.IntegerField(label = "Month of pregnancy")
@@ -59,3 +60,8 @@ class DoctorSignUpForm(UserCreationForm):
         doctor.experience_years = self.cleaned_data['experience_years']
         doctor.save()
         return user
+
+class ContactForm(forms.ModelForm):
+    class Meta:
+        model = Contact
+        fields = '__all__'
