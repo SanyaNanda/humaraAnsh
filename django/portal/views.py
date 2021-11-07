@@ -29,9 +29,9 @@ def login_request(request):
                 login(request, user)
                 if request.user.is_doctor:
                     messages.info(request, f"You are now logged in as {username}")
-                    return redirect('doctor_home')
+                    return redirect('portal:doctor_home')
                 else:
-                    return redirect('patient_home')
+                    return redirect('portal:patient_home')
             else:
                 messages.error(request, "Invalid username or password.")
         else:
@@ -62,7 +62,7 @@ class PatientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('patient_home')
+        return redirect('portal:patient_home')
 
 class DoctorSignUpView(CreateView):
     model = User
@@ -76,7 +76,7 @@ class DoctorSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('doctor_home')
+        return redirect('portal:doctor_home')
 
 class PatientHomeView(ListView):
     model = Patient
@@ -89,9 +89,9 @@ class DoctorHomeView(ListView):
 @login_required
 def login_success(request):
     if request.user.is_doctor:
-        return HttpResponseRedirect(reverse('doctor_home'))
+        return HttpResponseRedirect(reverse('portal:doctor_home'))
     else:
-        return HttpResponseRedirect(reverse('patient_home'))
+        return HttpResponseRedirect(reverse('portal:patient_home'))
 
 def contact_view(request):
     if request.method == 'POST':

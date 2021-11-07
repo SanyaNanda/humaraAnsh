@@ -10,12 +10,21 @@ class User(AbstractUser):
 class Patient(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     pregnancy_month = IntegerField(default=None,null=True)
+    choice = IntegerField(default=None,null=True)
 
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     specialist = CharField(max_length=255)
     hospital = CharField(max_length=255)
     experience_years = FloatField(null=True)
+
+    selected_by = models.ManyToManyField(Patient, related_name='choose_doctor')
+    
+    def total_patients(self):
+        return self.selected_by.count()
+    
+    def selectors(self):
+        return self.selected_by.all()
 
 class Contact(models.Model):
     name = CharField(max_length=255)

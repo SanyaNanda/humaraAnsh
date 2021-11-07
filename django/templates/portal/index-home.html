@@ -100,16 +100,16 @@ Fixed Navigation
             <a class="nav-link" href="#testimonial">Testimonial</a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="{% url 'team' %}">Team</a>
+            <a class="nav-link" href="{% url 'portal:team' %}">Team</a>
           </li>
           <!-- <li class="nav-item ">
             <a class="nav-link" href="pricing.html">Pricing</a>
           </li> -->
           <li class="nav-item ">
-            <a class="nav-link" href="{% url 'Contact_Us' %}">Contact</a>
+            <a class="nav-link" href="{% url 'portal:Contact_Us' %}">Contact</a>
           </li>
 		  <li class="nav-item ">
-            <a class="nav-link" class="btn btn-transparent" href="{% url 'login' %}">Login</a>
+            <a class="nav-link" class="btn btn-transparent" href="{% url 'portal:login' %}">Login</a>
           </li>
           <!-- <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -147,10 +147,10 @@ Welcome Slider
  					</p>
  					<ul class="list-inline wow fadeInUp" data-wow-duration=".5s" data-wow-delay=".7s">
  						<li class="list-inline-item">
- 							<a data-scroll class="btn btn-main" href="{% url 'patient_signup' %}">Parent</a>
+ 							<a data-scroll class="btn btn-main" href="{% url 'portal:patient_signup' %}">Parent</a>
  						</li>
  						<li class="list-inline-item">
- 							<a data-scroll class="btn btn-transparent" href="{% url 'doctor_signup' %}">Doctor</a>
+ 							<a data-scroll class="btn btn-transparent" href="{% url 'portal:doctor_signup' %}">Doctor</a>
  						</li>
  					</ul>
  				</div>
@@ -268,7 +268,7 @@ Start Call To Action
 			<div class="col-md-12 text-center">
 				<h2>Let's Create Something Together</h2>
 				<!-- <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicudin bibendum auctor, <br> nisi elit consequat ipsum, nesagittis sem nid elit. Duis sed odio sitain elit.</p> -->
-				<a href="{% url 'Contact_Us' %}" class="btn btn-main">Contact Us</a>
+				<a href="{% url 'portal:Contact_Us' %}" class="btn btn-main">Contact Us</a>
 			</div>
 		</div> 		<!-- End row -->
 	</div>   	<!-- End container -->

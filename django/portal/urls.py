@@ -1,6 +1,8 @@
 from django.urls import include, path
 from .views import ContactUsView, PatientSignUpView, SignUpView, DoctorSignUpView, PatientHomeView, DoctorHomeView, TeamView, login_success, login_request, contact_view
 
+app_name = 'portal'
+
 urlpatterns = [
     path('accounts/', include('django.contrib.auth.urls')),
     # path('signup/', SignUpView.as_view(), name='signup'),

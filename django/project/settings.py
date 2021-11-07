@@ -46,6 +46,7 @@ INSTALLED_APPS = [
 
     #apps
     'portal',
+    'reports',
 ]
 
 MIDDLEWARE = [
@@ -136,9 +137,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'portal.User'
 
-LOGOUT_REDIRECT_URL = 'login'
+LOGOUT_REDIRECT_URL = 'portal:login'
 
-LOGIN_REDIRECT_URL = 'login_success'
+LOGIN_REDIRECT_URL = 'portal:login_success'
 
 # email settings
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

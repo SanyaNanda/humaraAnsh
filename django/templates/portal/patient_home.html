@@ -1,14 +1,14 @@
-{% extends 'base.html' %}
+{% extends 'portal/base.html' %}
 
 {% block content %}
+<div class="container">
+{% if user.is_authenticated %}
   <h1>Patient Home</h1>
-  {% if user.is_authenticated %}
-
   {% if user.is_patient %}
   {% for patient in object_list %}
   {% if user.id == patient.user.id %}
 
-  <p>Welcome Parent! {{ user.first_name}} {{ user.last_name}}</p>
+  <h4>{{ user.first_name}} {{ user.last_name}}</h4>
   <p>Pregnancy Month {{ patient.pregnancy_month }}</p>
 
   <h3>Features</h3>
@@ -17,9 +17,9 @@
   <p>schedule appointment</p>
   <p>view feed</p>
   <p>recommendations</p>
-  <p><a href="{% url 'logout' %}">Log Out</a></p>
   {% endif %}
   {% endfor %}
   {% endif %}
+  </div>
 {% endif%}
 {% endblock %}
