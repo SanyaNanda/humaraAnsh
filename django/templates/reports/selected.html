@@ -12,7 +12,7 @@ select doctor
 {% if user.is_authenticated %}
 
 
-<form action="{% url 'reports:choice pk' %}" method="post" id="form1">
+<form action="{% url 'reports:choice' %}" method="post" id="form1">
 {% csrf_token %}
 {% for doctor in object_list %}
 

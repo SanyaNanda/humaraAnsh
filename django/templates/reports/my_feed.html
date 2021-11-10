@@ -1,0 +1,21 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+{% if user.is_authenticated %}
+<h1>my feed</h1>
+<ul style="list-style-type: none;">
+{% for post in object_list %}
+{% if user.id == post.patient.user.id %}	
+<li>
+	<b>{{ post.title }}</b> by <b>Dr. {{ post.doctor.user.first_name }} {{ post.doctor.user.last_name }}</b> on <small>{{ post.post_date }}</small>
+	<br><br>
+	<a href="{% url 'reports:report_details' post.pk %}">view report</a>
+	<hr>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endblock %}

@@ -13,7 +13,6 @@ from django.views.generic import CreateView, ListView, UpdateView, TemplateView
 from django.contrib.auth.forms import AuthenticationForm
 from django.core.mail import send_mail
 from django.conf import settings
-
 from .models import Patient
 from .forms import ContactForm, PatientSignUpForm, DoctorSignUpForm
 from .decorators import patient_required

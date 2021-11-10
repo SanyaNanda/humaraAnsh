@@ -39,6 +39,9 @@
       <li class="nav-item"  >
         <a class="nav-link" href="{% url 'reports:add_post' %}">Add Report Post</a>
       </li>
+       <li class="nav-item"  >
+        <a class="nav-link" href="{% url 'reports:patient_history' %}">Patient History</a>
+      </li>
       {% endif %}
       {% if user.is_patient %} 
       <li class="nav-item"  >
@@ -46,6 +49,9 @@
       </li>    
       <li class="nav-item"  >
         <a class="nav-link" href="{% url 'reports:select_doctor' %}">Select Doctor</a>
+      </li>
+      <li class="nav-item"  >
+        <a class="nav-link" href="{% url 'reports:my_feed' %}">My Reports</a>
       </li>
       {% endif %}
       <li class="nav-item">

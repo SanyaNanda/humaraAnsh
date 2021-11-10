@@ -12,6 +12,9 @@ class Patient(models.Model):
     pregnancy_month = IntegerField(default=None,null=True)
     choice = IntegerField(default=None,null=True)
 
+    def __str__(self):
+        return f"{self.user.last_name}, {self.user.first_name}"
+
 class Doctor(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
     specialist = CharField(max_length=255)

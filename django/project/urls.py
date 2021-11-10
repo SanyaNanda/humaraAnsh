@@ -17,10 +17,12 @@ from django.conf.urls import url
 from django.contrib import admin
 from django.urls import path, include
 from portal.views import SignUpView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('portal/', include('portal.urls')),
     path('map/', include('reports.urls')),
     path('', SignUpView.as_view(), name='signup'),
-]
+]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

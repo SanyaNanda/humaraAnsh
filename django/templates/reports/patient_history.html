@@ -1,0 +1,21 @@
+{% extends 'portal/base.html' %}
+{% load static %}
+{% block content %}
+<div class="container">
+{% if user.is_authenticated %}
+<h1>Patients History</h1>
+<ul style="list-style-type: none;">
+{% for patient in object_list %}
+{% if user.id == patient.choice %}	
+<li>
+	<b>{{ patient.user.first_name }} {{ patient.user.last_name }}</b> 
+	<br><br>
+	<a href="{% url 'reports:patient_history_detail' patient.pk %}">view patient history</a>
+	<hr>
+</li>
+{% endif %}
+{% endfor %}
+</ul>
+{% endif %}
+</div>
+{% endblock %}
