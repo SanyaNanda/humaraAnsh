@@ -13,4 +13,5 @@ urlpatterns = [
     path('patient_history/',views.patientHistoryView.as_view(),name="patient_history"),
     path('patient_history_detail/<int:pk>',views.patientHistoryDetailedView.as_view(),name="patient_history_detail"),
     path('report_doc/<int:pk>', views.patientHistoryDetailView.as_view(), name="report_details_doc"),
+    path('ajax/load-patients/', views.load_patients, name='ajax_load_patients')
 ]

@@ -19,6 +19,11 @@ class AddPostView(CreateView):
 	# class Meta:
 	# 	Post.parent.choice = Post.doctor.user.id
 
+def load_patients(request):
+	doctor_id = request.GET.get('doctor')
+	patients = Patient.objects.filter(choice = doctor_id)
+	return render(request, 'reports/patient_dropdown_list_options.html', {'patients':patients})
+
 def choice(request):
 	Patient.objects.filter(user__username=request.user).update(choice = request.POST['doc'])
 	return HttpResponseRedirect(reverse('portal:patient_home'))
@@ -65,3 +70,4 @@ class patientHistoryDetailView(DetailView):
 		context[self.context_object_name] = get_object_or_404(Post, id=self.kwargs['pk'])
 		# context[self.context_object_name] = self.object
 		return context
+
