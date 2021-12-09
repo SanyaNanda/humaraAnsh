@@ -57,7 +57,7 @@
  {% if user.is_patient %}
   {% for patient in object_list %}
   {% if user.id == patient.user.id %}
-  <section id="hero" class="d-flex align-items-center">
+  <section id="heroe" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome {{ user.first_name}} {{ user.last_name}}</h1>
       <h2></h2>
@@ -75,8 +75,9 @@
         <div class="row">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="content">
-              <h3>Your Doctor's Profile</h3>
-                <p>content lambaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa hogaya</p>
+              <h3>Parenthood is special</h3>
+                <p>“No one is ever quite ready; everyone is always caught off guard. Parenthood chooses you. And you open your eyes, look at what you’ve got, say “Oh, my gosh,” and recognize that of all the balls there ever were, this is the one you should not drop. It’s not a question of choice.”
+                </p>
               <div class="text-center">
                 <!-- <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a> -->
               </div>
@@ -211,7 +212,8 @@
               <div class="icon"><i class="fas fa-heartbeat"></i></div>
               {% comment %} <a href="{% url 'reports:add_post' %}" class="service_card"> {% endcomment %}
               <h4>View Report</h4>
-              <p>You can view reports uploaded by your doctor here
+              <p>You can view reports uploaded by your doctor and maintain your report directory.
+
                </p>
             </div>
           </div></a>
@@ -221,7 +223,8 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-pills"></i></div>
               <h4>Select Doctor </h4>
-              <p>You can choose your doctor here
+              <p>You can select a doctor from a wide range of specialities and get regular checkups.
+
               </p>
             </div>
           </div></a> 
@@ -231,7 +234,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-hospital-user"></i></div>
               <h4>View and buy Medicine</h4>
-              <p>You can view and buy the medicins prescribed by you doctor
+              <p>You can view and buy the medicins prescribed by you doctor.
               </p>
             </div>
           </div></a>
@@ -241,7 +244,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-dna"></i></div>
               <h4>Schedule appointment</h4>
-              <p>You can schedule meetings with your doctor via a shared calendar
+              <p>You can schedule meetings with your doctor via a shared calendar.
               </p>
             </div>
           </div></a>
@@ -251,7 +254,7 @@
             <div class="icon-box">
               <div class="icon"><i class="fas fa-camera" aria-hidden="true"></i></div>
               <h4>Video Call</h4>
-              <p>You can engage in online appointments with doctors
+              <p>You can engage in online appointments with doctors wth video and audio calls.
               </p>
             </div>
           </div></a>
@@ -355,19 +358,19 @@
                 <a class="nav-link" data-bs-toggle="tab" href="#tab-3">OB/GYN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Pediatrician</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Pediatrician</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-4">Gynecologic Oncology</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Gynecologic Oncology</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-5">Maternal and Fetal Medicine</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-6">Maternal and Fetal Medicine</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Reproductive Endocrinology and Infertility</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-7">Reproductive Endocrinology and Infertility</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="tab" href="#tab-3">Urogynecology / Reconstructive Pelvic Surgery</a>
+                <a class="nav-link" data-bs-toggle="tab" href="#tab-8">Urogynecology / Reconstructive Pelvic Surgery</a>
               </li>
             </ul>
           </div>
@@ -377,7 +380,7 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Obstetrician</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    {% comment %} <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> {% endcomment %}
                     <p>An obstetrician is a physician who specializes in the surgical care of women and their children during pregnancy, childbirth, pueperium and post-natal care. They also perform regular ultrasounds during pregnancy to determine the health of the fetus, identify any complications and know the gestational period of the fetus. Identify if there are any high risk factors in women during pregnancy, delivery and later.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -389,7 +392,7 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Gynecologist</h3>
-                    <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p>
+                    {% comment %} <p class="fst-italic">Qui laudantium consequatur laborum sit qui ad sapiente dila parde sonata raqer a videna mareta paulona marka</p> {% endcomment %}
                     <p>A gynecologist is a physician who specializes in the medical care of women and in health of the female reproductive system. They also deal with pap smear, infections of vaginal and uterine origin, fertility problems, contraception, tubal ligations and hysterectomy.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -401,7 +404,7 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>OB/GYN</h3>
-                    <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p>
+                    {% comment %} <p class="fst-italic">Eos voluptatibus quo. Odio similique illum id quidem non enim fuga. Qui natus non sunt dicta dolor et. In asperiores velit quaerat perferendis aut</p> {% endcomment %}
                     <p>OB/GYN is short for obstetrician/gynecologist, a doctor who both delivers babies and diagnosis and treats diseases related to the female reproductive organs. An obstetrician/gynecologist is a physician who specializes in providing both medical and surgical care to women. They have particular expertise in pregnancy, childbirth and reproductive system disorders. This encompasses preventive care, treatment, prenatal care, pap test screening, detection of sexually transmitted diseases, and family planning.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -413,20 +416,8 @@
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Pediatrician</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    {% comment %} <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p> {% endcomment %}
                     <p>A pediatrician is a medical doctor who manages the physical, behavioral, and mental care for children from birth until age 18.</p>
-                  </div>
-                  <div class="col-lg-4 text-center order-1 order-lg-2">
-                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-              <div class="tab-pane" id="tab-4">
-                <div class="row">
-                  <div class="col-lg-8 details order-2 order-lg-1">
-                    <h3>Gynecologic Oncology</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
-                    <p>This is concerned mainly with consultation and comprehensive management of patients with gynecologic cancer. Being a specialist in gynecologic oncology would require extensive knowledge of major treatments of cancer, diagnosis and complications.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
                     <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
@@ -436,8 +427,20 @@
               <div class="tab-pane" id="tab-5">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
+                    <h3>Gynecologic Oncology</h3>
+                    {% comment %} <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p> {% endcomment %}
+                    <p>This is concerned mainly with consultation and comprehensive management of patients with gynecologic cancer. Being a specialist in gynecologic oncology would require extensive knowledge of major treatments of cancer, diagnosis and complications.</p>
+                  </div>
+                  <div class="col-lg-4 text-center order-1 order-lg-2">
+                    <img src="assets/img/departments-4.jpg" alt="" class="img-fluid">
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane" id="tab-6">
+                <div class="row">
+                  <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Maternal and Fetal Medicine</h3>
-                    <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p>
+                    {% comment %} <p class="fst-italic">Omnis blanditiis saepe eos autem qui sunt debitis porro quia.</p> {% endcomment %}
                     <p>This is concerned with the care and consultation of patients with complications in pregnancy. Maternal and fetal medicine requires obstetrics knowledge in medical and surgical complications of fetus and mother, present approaches of diagnosis, treatment and newborn care.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -446,11 +449,11 @@
                 </div>
               </div>
 
-              <div class="tab-pane" id="tab-4">
+              <div class="tab-pane" id="tab-7">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Reproductive Endocrinology and Infertility</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    {% comment %} <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p> {% endcomment %}
                     <p>This is primarily concerned with the management of complex problems relating to reproductive endocrinology and infertility. Reproductive endocrinology and infertility requires knowledge of diagnosis and treatment of endocrinology and infertility disorders.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
@@ -459,11 +462,11 @@
                 </div>
               </div>
 
-              <div class="tab-pane" id="tab-4">
+              <div class="tab-pane" id="tab-8">
                 <div class="row">
                   <div class="col-lg-8 details order-2 order-lg-1">
                     <h3>Urogynecology / Reconstructive Pelvic Surgery</h3>
-                    <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p>
+                    {% comment %} <p class="fst-italic">Totam aperiam accusamus. Repellat consequuntur iure voluptas iure porro quis delectus</p> {% endcomment %}
                     <p>This is a surgical subspecialty. It is primarily concerned with the health of the female urinary tract and surgery as a treatment. Urogynecology requires knowledge of complex benign pelvic conditions, pelvic floor dysfunction, urinary tract disorders and reconstructive pelvic surgery.</p>
                   </div>
                   <div class="col-lg-4 text-center order-1 order-lg-2">
