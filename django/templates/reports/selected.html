@@ -8,24 +8,45 @@ select doctor
 {% block content %}
 {% if user.is_authenticated %}
 <div class="container">
-<h1>Select Doctor</h1>
+<h1 style="margin-top: 100px;">Select Doctor</h1>
 {% if user.is_authenticated %}
 
 
 <form action="{% url 'reports:choice' %}" method="post" id="form1">
 {% csrf_token %}
+
 {% for doctor in object_list %}
 
     <label>
     <input type="radio" name="doc" class="card-input-element" value="{{ doctor.user.id }}"/>
-        <div class="card">
+        {% comment %} <div class="card">
          <div class="card-body">
             <p>{{ doctor.user.first_name }} {{ doctor.user.last_name }}</p>
             <p>Speciality: {{ doctor.specialist }}</p>
             <p>hospital: {{ doctor.hospital }}</p>
             <p>experience: {{doctor.experience_years}} years </p>
         </div>
-        </div>
+        </div> {% endcomment %}
+		<section id="doctors" class="doctors">
+			<div class="container">
+			  <div class="row">
+				{% comment %} {% for doctor in object_list %} {% endcomment %}
+				<div class="col-lg-6">
+				  <div class="member d-flex align-items-start">
+					<div class="pic"><img src="{% static 'assets/img/doctors/doctors-1.jpg' %}" class="img-fluid" alt=""></div>
+					<div class="member-info">
+					  <h4>Dr. {{ doctor.user.first_name}} {{ doctor.user.last_name}}</h4>
+					  <span>{{ doctor.specialist }}</span>
+					  <p>works at {{ doctor.hospital }} and has experience of {{ doctor.experience_years }} years</p>
+					  <!-- <div class="social">
+						<a href=""><i class="ri-twitter-fill"></i></a>
+						<a href=""><i class="ri-facebook-fill"></i></a>
+						<a href=""><i class="ri-instagram-fill"></i></a>
+						<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
+					  </div> -->
+					</div>
+				  </div>
+				</div>
     </label>   
 <br>
 
@@ -33,9 +54,12 @@ select doctor
 </form>
 <button type="submit" form="form1" value="Submit">Submit</button>
 <br/><br/>
+</div>
 {% endif %}
 {% endif %}
 {% endblock %}
+
+
 
 {% comment %} <div class="container" id="c">
       <div class="col-md-4 col-lg-4 col-sm-4">

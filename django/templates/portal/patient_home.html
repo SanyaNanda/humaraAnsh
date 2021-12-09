@@ -55,7 +55,7 @@
  <!-- ======= Hero Section ======= -->
  {% if user.is_authenticated %}
  {% if user.is_patient %}
-  {% for patient in object_list %}
+  {% for patient in patient %}
   {% if user.id == patient.user.id %}
   <section id="heroe" class="d-flex align-items-center">
     <div class="container">
@@ -70,6 +70,7 @@
     
     <!-- ======= Why Us Section ======= -->
     <section id="why-us" class="why-us">
+      
       <div class="container">
 
         <div class="row">
@@ -86,6 +87,15 @@
           <div class="col-lg-8 d-flex align-items-stretch">
             <div class="icon-boxes d-flex flex-column justify-content-center">
               <div class="row">
+                {% for doctor in doctor %}
+                {% if doctor.user.id == patient.choice %}
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box mt-4 mt-xl-0">
+                    <i class="bx bx-cube-alt"></i>
+                    <h4>Doctor</h4>
+                    <p>Your doctor is <b>{{ doctor.user.first_name }} {{ doctor.user.last_name }}</b></p>
+                  </div>
+                </div>
                 <div class="col-xl-4 d-flex align-items-stretch">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
@@ -107,7 +117,10 @@
                     <p>Your doctor has an impactful career of <b>{{ doctor.experience_years }} years</b> and growing</p>
                   </div>
                 </div>
+                {% endif %}
+      {% endfor %}
               </div>
+              
             </div><!-- End .content-->
           </div>
         </div>

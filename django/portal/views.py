@@ -51,7 +51,7 @@ class PatientSignUpView(CreateView):
     template_name = 'portal/index.html'
 
     def get_context_data(self, **kwargs):
-        kwargs['user_type'] = 'patient'
+        kwargs['user_type'] = 'pYour Patienatient'
         return super().get_context_data(**kwargs)
 
     def form_valid(self, form):
@@ -76,6 +76,12 @@ class DoctorSignUpView(CreateView):
 class PatientHomeView(ListView):
     model = Patient
     template_name = 'portal/patient_home.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['patient'] = Patient.objects.all()  # or whatever
+        context['doctor'] = Doctor.objects.all()  # or whatever
+        return context
 
 class DoctorHomeView(ListView):
     model = Doctor
